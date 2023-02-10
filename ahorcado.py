@@ -1,12 +1,12 @@
 import random
 
 def podaj_litere():
-    new_letter = input("Wpisz kolejną literkę: ")
-    if new_letter == word_random:
+    nowa_litera = input("Wpisz kolejną literkę: ")
+    if nowa_litera == word_random:
         quit("Zgadłeś słowo. Gratulacje!")
-    if new_letter in word_lista:
+    if nowa_litera in word_lista:
         print("Dobrze! Jest taka literka w słowie!")
-    if new_letter not in word_lista:
+    if nowa_litera not in word_lista:
         quit("Ups... nie ma takiej literki :(")
 
 words = ['życie', 'kot', 'pies', 'kredka', 'masło', 'telefon', 'jabłko', 'pytanie', 'nuda', 'szkoła',
@@ -30,6 +30,10 @@ if word_length <= 4:
 else:
     print("Wylosowane słowo ma:", word_length, "literek. \nPierwsza literka to: ", word_random[0].upper(),
           "\nA ostatnia to: ", word_random[-1].upper())
+
+for w in word_random:
+    w.replace(word_random, '*')
+    print(w)
 
 for word in range(2, word_length):
     podaj_litere()
