@@ -1,0 +1,7 @@
+import string
+
+text = "Aurelio"
+
+for t in text:
+	t = string.punctuation[9]
+	print(t, end="")

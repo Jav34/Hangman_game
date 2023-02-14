@@ -1,4 +1,5 @@
 import random
+import string
 
 def podaj_litere():
     nowa_litera = input("Wpisz kolejną literkę: ")
@@ -25,15 +26,25 @@ word_random = random.choice(words)
 word_length = len(word_random)
 word_lista = list(word_random)
 
-if word_length <= 4:
-    print("Wylosowane słowo ma:", word_length, "literki. \nPierwsza literka to: ", word_random[0].upper())
-else:
-    print("Wylosowane słowo ma:", word_length, "literek. \nPierwsza literka to: ", word_random[0].upper(),
-          "\nA ostatnia to: ", word_random[-1].upper())
+def encrypt():
+    for w in word_random:
+        w = string.punctuation[9]
+        print(w, end="  ")
 
-for w in word_random:
-    w.replace(word_random, '*')
-    print(w)
+def liczba_mnoga():
+    if word_length <= 4:
+        encrypt()
+        print("Wylosowane słowo ma:", word_length,"literki. \nPierwsza literka to: ", word_random[0].upper())
+
+    else:
+        encrypt()
+        print("Wylosowane słowo ma:", word_length, "literek. \nPierwsza literka to: ", word_random[0].upper(),
+            "\nA ostatnia to: ", word_random[-1].upper())
+
+
+liczba_mnoga()
+
 
 for word in range(2, word_length):
     podaj_litere()
+    
